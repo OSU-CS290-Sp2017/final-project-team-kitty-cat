@@ -1,0 +1,27 @@
+{
+  "name": "Movie Tagger",
+  "version": "1.0.0",
+  "description": "Final project for CS290",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "handlebars views/partials/twit.handlebars -f public/twitTemplate.js",
+    "prestart": "npm run build",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:OSU-CS290-Sp2017/final-project-team-kitty-cat.git"
+  },
+  "author": "Henderson, Hudson,Facchetti",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/OSU-CS290-Sp2017/final-project-team-kitty-cat/issues"
+  },
+  "homepage": "https://github.com/OSU-CS290-Sp2017/final-project-team-kitty-cat#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "express-handlebars": "^3.0.0",
+    "handlebars": "^4.0.10"
+  }
+}
