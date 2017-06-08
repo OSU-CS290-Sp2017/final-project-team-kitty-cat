@@ -1,1 +1,0 @@
-// Client side javaScript file

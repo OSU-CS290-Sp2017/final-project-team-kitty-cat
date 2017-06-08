@@ -1,116 +1,73 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
 
-    <meta charset="utf-8">
-    <title>Channels</title>
+	<meta charset="utf-8">
+	<title>Movie Finder</title>
 
-    <!-- This is a stylesheet that includes the font you should use -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700" rel="stylesheet">
+	<!-- This is a stylesheet that includes the font you should use -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700" rel="stylesheet">
 
-    <!-- This is a 3rd-party stylesheet for Font Awesome: http://fontawesome.io/ -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="screen">
+	<!-- This is a 3rd-party stylesheet for Font Awesome: http://fontawesome.io/ -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="screen">
 
-    <link rel="stylesheet" href="./style.css" media="screen">
+	<link rel="stylesheet" href="./style.css" media="screen">
+	<script src="index.js"></script>
 
-  </head>
+</head>
 
 <body>
-	<header>
-		<!-- insert logo (if we have) here -->
-		<a href="#"><h1 class="title">App Name Here</h1></a>
-		<nav class="navbar">
+		<header>
+			<!-- insert logo (if we have) here -->
+			<a href="#"><h1 class="title">Movie Finder</h1></a>
+			<nav class="navbar">
 
-			<ul class="navlist">
-				<li class="navitem selected">
-					<a href="#" >Home</a>
-				</li>
+				<ul class="navlist">
+					<li class="navitem selected">
+						<a href="#" >Home</a>
+					</li>
 
-				<li class="navitem">
-					<a href="#">Some other stuff</a>
-				</li>
+					<li class="navitem">
+						<a href="#">Random</a>
+					</li>
 
-				<li class="navitem">
-					<a href="#" >Some other link</a>
-				</li>
+					<li class="navitem">
+						<a href="#" >Add a movie/Review</a>
+					</li>
 
-			</ul>
-			<!-- insert the menu here -->
-		</nav>
-
-	</header>
-
-	<main class="main">
-		<!-- insert the main part of the app here -->
-		<div class="container-left">
-
-		</div>
-
-		<div class="container-middle">
-
-      <h3 class="container-title"> Channels</h3>
-
-      <div class="channel-container">
-
-      <button type="button" class="drop-down">+</button>
-      <h3 class="channel-name">Test Channel 1</h3>
-
-        <div class="drop-down-box">
-          <ul class="comments">
-            <li><p>George: hello world</p></li>
-            <li><p>George: hello world</p></li>
-            <li><p>George: hello world</p></li>
-            <li><p>George: hello world</p></li>
-            <li><p>George: hello world</p></li>
-          </ul>
-
-          <div class="comment-input-element">
-            <label for="comment-text-input">New Comment</label>
-            <textare id="comment-text-input"></textarea>
-          </div>
-
-          <div class="comment-footer">
-            <button type="button" class="comment-accept-button">Add Comment</button>
-          </div>
-        </div>
-      </div>
-
-      <!--
-      I was testing this second channel out, ran into a problem when I'd display
-      the drop-down-box. The second channel-container would intersect the drop-down-box.
-      This is going to need a fix.
-
-      <div class="channel-container">
-
-      <button type="button" class="drop-down">+</button>
-      <h3 class="channel-name">Test Channel 2</h3>
-
-        <div class="drop-down-box">
-          <ul class="comments">
-            <li><p>Jungle: hello world</p></li>
-          </ul>
-
-          <div class="comment-input-element">
-            <label for="comment-text-input">New Comment</label>
-            <textare id="comment-text-input"></textarea>
-          </div>
-
-          <div class="comment-footer">
-            <button type="button" class="comment-accept-button">Add Comment</button>
-          </div>
-        </div>
-      </div>
-    -->
-		</div>
-
-		<div class="container-right">
-			This is where the details of the conversation will be displayed
-		</div>
-	</main>
+				</ul>
 
 
+			</nav>
+			<div class="searchStuff">
+
+				<input type="text" name="Search" id="searchInput">
+				<button type="button" name="button"><i class="fa fa-search"></i> </button>
+			</div>
+
+		</header>
+
+		<main class="main">
+				<div class="side panel">
+					<p class="sidebar-popular-Tags">Popular Tags</p>
+					<ul>
+						<li>tag1</li>
+						<li>tag2</li>
+						<li>tag3</li>
+						<li>tag1</li>
+						<li>tag2</li>
+						<li>tag3</li>
+						<li>tag1</li>
+						<li>tag2</li>
+						<li>tag3</li>
+					</ul>
+
+				</div>
+				<div class="description">
+					Find movies you want to watch by using tags , instead of looking for categories or titles. You can add your own tags to the movies.
+				</div>
+		</main>
+	</div>
 </body>
-
-<script type="text/javascript" src="/index.js" charset="utf-8"></script>
 
 </html>

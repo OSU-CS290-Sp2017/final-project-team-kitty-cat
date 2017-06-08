@@ -1,1 +1,3 @@
-// Client side javaScript file
+document.getElementsByClassName("fa fa-search").addEventListener("click",function(){
+
+});
