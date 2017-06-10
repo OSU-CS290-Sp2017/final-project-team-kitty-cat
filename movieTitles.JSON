@@ -1,0 +1,49 @@
+{
+  "Movies":
+  [
+    {
+      "name": "Gladiator",
+      "review": "Such Cool",
+      "rating": "10"
+    },
+    {
+      "name": "Star Wars: Episode III - Revenge of the Sith",
+      "review": "Very neat!",
+      "rating": "8"
+    },
+    {
+      "name": "Breaking Bad",
+      "review": "Wow amazing",
+      "rating": "8"
+    },
+    {
+      "name": "Breaking Bad",
+      "review": "Wow amazing",
+      "rating": "8"
+    }
+  ],
+  "TV-shows":
+  [
+    {
+      "name": "Breaking Bad",
+      "review": "Wow amazing",
+      "rating": "8"
+    },
+    {
+      "name": "Daredevil",
+      "review": "Entertaining!",
+      "rating": "7.5"
+    },
+    {
+      "name": "The Office",
+      "review": "Haha Funny",
+      "rating": "7"
+    },
+    {
+      "name": "Always Sunny",
+      "review": "Season 7 is funny",
+      "rating": "8"
+    }
+
+  ]
+}
