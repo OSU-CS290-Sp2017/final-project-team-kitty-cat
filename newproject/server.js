@@ -13,7 +13,7 @@ var movieData = require("./movieData");
 
 var styleFile = fs.readFileSync('./public/style.css');
 var jsFile = fs.readFileSync('./public/index.js');
-var template = fs.readFileSync('./public/twitTemplate.js')
+var template = fs.readFileSync('./public/movieTemplate.js')
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
@@ -24,7 +24,7 @@ app.get('/',function(req,res,next){
 	};
 
 	var bool=true;
-	res.status(200).render("twitPage",{list:templateArgs,bool:bool});
+	res.status(200).render("moviePage",{list:templateArgs,bool:bool});
 });
 
 app.get('/twit/:index',function(req,res,next){

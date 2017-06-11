@@ -9,6 +9,8 @@ templates['movie'] = template({"compiler":[7,">= 4.0.0"],"main":function(contain
     + alias4(((helper = (helper = helpers.director || (depth0 != null ? depth0.director : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"director","hash":{},"data":data}) : helper)))
     + "</a>\n		</p>\n		<p class=\"movie-comment\">\n			\""
     + alias4(((helper = (helper = helpers.comment || (depth0 != null ? depth0.comment : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"comment","hash":{},"data":data}) : helper)))
-    + "\"\n		</p>\n	</div>\n</article>\n";
+    + "\"\n		</p>\n		<p class=\"movie-plus-minus\">\n			"
+    + alias4(((helper = (helper = helpers.plusminus || (depth0 != null ? depth0.plusminus : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"plusminus","hash":{},"data":data}) : helper)))
+    + "\n		</p>\n	</div>\n</article>\n";
 },"useData":true});
 })();
