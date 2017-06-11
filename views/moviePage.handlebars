@@ -1,0 +1,16 @@
+<main class="main">
+    <div class="side panel">
+      <p class="sidebar-popular-Tags">Popular Tags</p>
+      <div class="tag-container">
+        <ul>
+        <!-- Handlebar V: <li><button>{{titles}}</button></li> -->
+          {{#each list.movieTitle}}
+            {{>movieTitle}}
+          {{/each}}
+
+        </ul>
+      </div>
+
+    </div>
+    {{> movieView}}
+  </main>
