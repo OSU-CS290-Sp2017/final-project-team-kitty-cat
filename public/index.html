@@ -17,54 +17,51 @@
 </head>
 
 <body>
-		<header>
+	<header>
 			<!-- insert logo (if we have) here -->
-			<a href="#"><h1 class="title">Movie Finder</h1></a>
-			<nav class="navbar">
+		<a href="#"><h1 class="title">Movie Finder</h1></a>
+		<nav class="navbar">
 
-				<ul class="navlist">
-					<li class="navitem selected">
-						<a href="#" >Home</a>
-					</li>
+			<ul class="navlist">
+				<li class="navitem selected">
+					<a href="#" >Home</a>
+				</li>
 
-					<li class="navitem">
-						<a href="#">Random</a>
-					</li>
+				<li class="navitem">
+					<a href="#">Random</a>
+				</li>
 
-					<li class="navitem">
-						<a href="#" >Add a movie/Review</a>
-					</li>
+				<li class="navitem">
+					<a href="#" >Add a movie/Review</a>
+				</li>
 
-				</ul>
+			</ul>
 
 
-			</nav>
-			<div class="searchStuff">
+		</nav>
+		<div class="searchStuff">
 
-				<input type="text" name="Search" id="searchInput">
-				<button type="button" name="button"><i class="fa fa-search"></i> </button>
-			</div>
+			<input type="text" name="Search" id="searchInput">
+			<button type="button" name="button"><i class="fa fa-search"></i> </button>
+		</div>
 
-		</header>
+	</header>
 
-		<main class="main">
-				<div class="side panel">
-					<p class="sidebar-popular-Tags">Popular Tags</p>
-					<div class="tag-container">
-						<ul>
+	<main class="main">
+			<div class="side panel">
+				<p class="sidebar-popular-Tags">Popular Tags</p>
+				<div class="tag-container">
+					<ul>
 					<!-- Handlebar V: <li><button>{{titles}}</button></li> -->
-							<li><button class="tag-buttons">Gladiator</button></li>
-							<li><button class="tag-buttons">Star Wars</button></li>
-							<li><button class="tag-buttons">Silicon Valley</button></li>
-							<li><button class="tag-buttons">Game of Thrones</button></li>
-							<li><button class="tag-buttons">Movies</button></li>
-						</ul>
-					</div>
+						{{#each list.movieTitle}}
+							{{>movieTitle}}
+						{{/each}}
 
+					</ul>
 				</div>
-				<div class="description">
-					<h1 class="movie-title-display">Test1</h1>
-				</div>
+
+			</div>
+			{{> movieView}}
 		</main>
 	</div>
 </body>
