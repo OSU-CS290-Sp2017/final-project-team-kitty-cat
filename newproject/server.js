@@ -1,7 +1,6 @@
 /*
  * Write your Express server in this file as described in README.md.
  */
-//Code for Jeremy Facchetti (Onid:facchetj) (github facchettos)
 //
 var path = require('path');
 var fs = require('fs');
@@ -27,25 +26,26 @@ app.get('/',function(req,res,next){
 	res.status(200).render("moviePage",{list:templateArgs,bool:bool});
 });
 
-app.get('/twit/:index',function(req,res,next){
+app.get('/movie/:index',function(req,res,next){
 	console.log("== url params for request:", req.params);
+
 	var index = req.params.index;
-  	var requestedTwit = movieData[index];
-	var mylist = {requestedTwit};
+	var requestedMovie = movieData[index];
+	var mylist = {requestedMovie};
 	//console.log(movieData[index].text);
 
-  	if (requestedTwit) {
-    var templateArgs = {
-		twit:mylist
-    }
-	var bool=false;
-    res.status(200).render('twitPage', {list:templateArgs,bool:bool});
-  } else {
-
-	res.status(404).render("404Page");
-  }
+	if (requestedMovie) {
+		var templateArgs = {
+			twit:mylist
+		};
+		var bool=false;
+		res.status(200).render('moviePage', {list:templateArgs,bool:bool,});
+	}  else {
+		res.status(404).render('404Page');
+	}
 
 });
+
 
 app.get('/style.css', function(req,res){
 	res.writeHead(200,{"Content-type":"text/css"});
@@ -75,4 +75,4 @@ app.get('*', function (req, res) {
 
 app.listen(port,function(){
 	console.log("Server listening on port "+ port);
-})
+});
