@@ -17,7 +17,7 @@ Make sure to npm install in the Node.js command prompt in your master directory.
 
 Things we need done:  
 #Dynamically generates pages <a>tags -- server.js    ex: http://localhost:3000/Dynamic/Link
-#Bak-End user create data to be stored -- server.js / index.js  ex: adding user data to json
+#Back-End user create data to be stored -- server.js / index.js  ex: adding user data to json
 #styling and flex boxes -- style.css  
 #UI: create a screen/page for user tag creation analogous to the twit modal drop -- index.js / index.js / style.css 
 
