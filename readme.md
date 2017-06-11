@@ -9,3 +9,7 @@
  -- Joshua Henderson
  -
  -
+
+## Update 6.11.17
+
+Make sure to npm install in the Node.js command prompt in your master directory.
