@@ -22,12 +22,15 @@ console.log(movieData.length);
 app.get('/',function(req,res,next){
 
 	console.log(movieData);
-	movieData.sort(function(a,b){return b.plusminus - a.plusminus});
-	var sideMovies =  movieData.slice(0,5);
+	var stocklist = movieData;
+	stocklist.sort(function(a,b){return b.plusminus - a.plusminus});
+	var sideMovies =  stocklist.slice(0,5);
+	movieData=require("./movieData");
+	
 	var templateArgs ={
 		twit:sideMovies
 	};
-
+	movieData=require("./movieData");
 	var bool=true;
 	res.status(200).render("homePage",{list:templateArgs,bool:bool});
 });
@@ -36,16 +39,31 @@ app.get('/movie/:index',function(req,res,next){
 	console.log("== url params for request:", req.params);
 
 	var index = req.params.index;
-	var requestedMovie = movieData[index];
-	var mylist = {requestedMovie};
+	var mylist;
+	var requestedMovie;
+	var stocklist = movieData;
+	stocklist.sort(function(a,b){return b.plusminus - a.plusminus});
+	var sideMovies =  stocklist.slice(0,5);
+	movieData=require("./movieData");
+	for (i=0; i<movieData.length;i++){
+		if (movieData[i].id==index){
+			 requestedMovie = movieData[i];
+			mylist={requestedMovie }
+		}
+	}
 	//console.log(movieData[index].text);
+	// console.log(movieData);
 
-	if (requestedMovie) {
+	if (mylist) {
 		var templateArgs = {
 			twit:mylist
 		};
+		var templateArgsSide = {
+			twit:sideMovies
+		};
+		console.log(templateArgsSide);
 		var bool=false;
-		res.status(200).render('moviePage', {list:templateArgs,bool:bool,});
+		res.status(200).render('moviePage', {list:templateArgs,sidelist:templateArgsSide,bool:bool,});
 	}  else {
 		res.status(404).render('404Page');
 	}
@@ -79,16 +97,30 @@ app.get('/random',function(req,res){
 
 	var length = movieData.length;
 	var index=getRandomInt(0,length-1);
-	var requestedMovie = movieData[index];
+	var requestedMovie;
+	// var requestedMovie = movieData[index];
+	// var stockList=movieData;
+	// stockList.sort(function(a,b){return b.plusminus - a.plusminus});
+	var sideMovies =  stockList.slice(0,5);
 	var mylist = {requestedMovie};
+	movieData=require("./movieData");
 	//console.log(movieData[index].text);
+	for (i =0 ; i<movieData.length;i++){
+		if (movieData[i].id==index){
+			 requestedMovie = movieData[i];
+			mylist={requestedMovie }
+		}
+	}
 
-	if (requestedMovie) {
+	if (mylist) {
 		var templateArgs = {
 			twit:mylist
 		};
+		var templateArgsSide={
+			twit:sideMovies
+		};
 		var bool=false;
-		res.status(200).render('moviePage', {list:templateArgs,bool:bool,});
+		res.status(200).render('moviePage', {list:templateArgs,sidelist:templateArgsSide,bool:bool,});
 	}  else {
 		res.status(404).render('404Page');
 	}
@@ -119,9 +151,7 @@ app.post('/addMovie', function (req, res, next) {
       });
 });
 
-
-
-
 app.listen(port,function(){
 	console.log("Server listening on port "+ port);
+	console.log(movieData[1]);
 });
