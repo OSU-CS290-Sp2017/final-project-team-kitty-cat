@@ -26,7 +26,7 @@ app.get('/',function(req,res,next){
 	stocklist.sort(function(a,b){return b.plusminus - a.plusminus});
 	var sideMovies =  stocklist.slice(0,5);
 	movieData=require("./movieData");
-	
+
 	var templateArgs ={
 		twit:sideMovies
 	};
@@ -99,8 +99,8 @@ app.get('/random',function(req,res){
 	var index=getRandomInt(0,length-1);
 	var requestedMovie;
 	// var requestedMovie = movieData[index];
-	// var stockList=movieData;
-	// stockList.sort(function(a,b){return b.plusminus - a.plusminus});
+	var stockList=movieData;
+	stockList.sort(function(a,b){return b.plusminus - a.plusminus});
 	var sideMovies =  stockList.slice(0,5);
 	var mylist = {requestedMovie};
 	movieData=require("./movieData");
