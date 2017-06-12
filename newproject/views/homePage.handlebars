@@ -1,0 +1,32 @@
+{{!
+Write a handlebars template in this file to implement the main tweeter page,
+as described in README.md.
+}}
+
+
+  		{{> header}}
+  		<main class="movie-container">
+			<div class="side-panel">
+				{{#each list.twit}}
+					{{>movie}}
+				{{/each}}
+			</div>
+
+			<div class="main-container">
+
+				<article class="movieDes">
+					<div class="movie-content-des">
+						<p class="movie-title">
+							Welcome to our website! <br>
+							You can search movies using the search bar or click on the popular movies on the left of the screen <br>
+							Every one can add a new movie, but you will have to do a small review and a summary.
+						</p>
+
+					</div>
+				</article>
+			</div>
+
+  		</main>
+		{{#if bool}}
+    		{{>createTwitModal}}
+  		{{/if}}

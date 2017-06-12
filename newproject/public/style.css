@@ -141,6 +141,16 @@ a:focus {
   border-radius: 2px;
   background-color: #fff;
 }
+.movieDes {
+  flex: 0 1 28%;
+  display: flex;
+  margin: 2px;
+  min-height: 90%;
+  padding: 20px;
+  border: 1px solid #dadada;
+  border-radius: 2px;
+  background-color: #fff;
+}
 
 .twit-icon {
   font-size: 24px;
@@ -149,6 +159,11 @@ a:focus {
 .movie-content {
   flex: 1 1 80%;
   margin-left: 10px;
+}
+
+.movie-content-des{
+	height: 90%;
+	margin-left: 10px;
 }
 
 .movie-content p {
