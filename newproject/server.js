@@ -1,7 +1,3 @@
-/*
-* Write your Express server in this file as described in README.md.
-*/
-//
 var path = require('path');
 var fs = require('fs');
 var express = require('express');
@@ -165,7 +161,7 @@ app.post('/movie/:index/minus'),function (req,res,next){
 		} else {
 			res.status(200).send();
 		}
-		
+
 	});
 }
 
