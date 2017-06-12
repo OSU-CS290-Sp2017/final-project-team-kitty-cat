@@ -1,6 +1,6 @@
 /*
- * Write your Express server in this file as described in README.md.
- */
+* Write your Express server in this file as described in README.md.
+*/
 //
 var path = require('path');
 var fs = require('fs');
@@ -47,7 +47,7 @@ app.get('/movie/:index',function(req,res,next){
 	movieData=require("./movieData");
 	for (i=0; i<movieData.length;i++){
 		if (movieData[i].id==index){
-			 requestedMovie = movieData[i];
+			requestedMovie = movieData[i];
 			mylist={requestedMovie }
 		}
 	}
@@ -90,7 +90,7 @@ app.get('/twitTemplate.js', function(req,res){
 })
 
 function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 app.get('/random',function(req,res){
@@ -107,7 +107,7 @@ app.get('/random',function(req,res){
 	//console.log(movieData[index].text);
 	for (i =0 ; i<movieData.length;i++){
 		if (movieData[i].id==index){
-			 requestedMovie = movieData[i];
+			requestedMovie = movieData[i];
 			mylist={requestedMovie }
 		}
 	}
@@ -142,12 +142,13 @@ app.post('/movie/:index/plus'),function (req,res,next){
 		}
 	}
 	fs.writeFile('movieData.json', JSON.stringify(movieData), function (err) {
-        if (err) {
-          res.status(500).send("Unable to increment plus minus.");
-        } else {
-          res.status(200).send();
-        }
+		if (err) {
+			res.status(500).send("Unable to increment plus minus.");
+		} else {
+			res.status(200).send();
+		}
 
+	});
 }
 
 app.post('/movie/:index/minus'),function (req,res,next){
@@ -159,12 +160,13 @@ app.post('/movie/:index/minus'),function (req,res,next){
 		}
 	}
 	fs.writeFile('movieData.json', JSON.stringify(movieData), function (err) {
-        if (err) {
-          res.status(500).send("Unable to decrement plus minus.");
-        } else {
-          res.status(200).send();
-        }
-
+		if (err) {
+			res.status(500).send("Unable to decrement plus minus.");
+		} else {
+			res.status(200).send();
+		}
+		
+	});
 }
 
 
@@ -178,12 +180,12 @@ app.post('/addMovie', function (req, res, next) {
 	// console.log("\n\n",movieData);
 	movieData.push(newMovie)
 	fs.writeFile('movieData.json', JSON.stringify(movieData), function (err) {
-        if (err) {
-          res.status(500).send("Unable to save photo to \"database\".");
-        } else {
-          res.status(200).send();
-        }
-      });
+		if (err) {
+			res.status(500).send("Unable to save photo to \"database\".");
+		} else {
+			res.status(200).send();
+		}
+	});
 });
 
 app.listen(port,function(){
