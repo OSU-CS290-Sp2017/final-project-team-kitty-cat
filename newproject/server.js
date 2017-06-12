@@ -133,12 +133,47 @@ app.get('*', function (req, res) {
 
 });
 
+app.post('/movie/:index/plus'),function (req,res,next){
+	var id=req.params.index;
+	movieData = require('./movieData');
+	for (i=0;i<movieData.length;i++){
+		if(movieData[i].id == id){
+			movieData[i].plusminus++;
+		}
+	}
+	fs.writeFile('movieData.json', JSON.stringify(movieData), function (err) {
+        if (err) {
+          res.status(500).send("Unable to increment plus minus.");
+        } else {
+          res.status(200).send();
+        }
+
+}
+
+app.post('/movie/:index/minus'),function (req,res,next){
+	var id=req.params.index;
+	movieData = require('./movieData');
+	for (i=0;i<movieData.length;i++){
+		if(movieData[i].id == id){
+			movieData[i].plusminus--;
+		}
+	}
+	fs.writeFile('movieData.json', JSON.stringify(movieData), function (err) {
+        if (err) {
+          res.status(500).send("Unable to increment plus minus.");
+        } else {
+          res.status(200).send();
+        }
+
+}
+
 
 app.post('/addMovie', function (req, res, next) {
 	var array = movieData;
 	var newMovie = {title:"asd",comment:"trololo"};
 	// console.log(JSON.stringify(newMovie));
 	newMovie.id=movieData.length;
+	newMovie.plusminus=0;
 	// console.log(newMovie);
 	// console.log("\n\n",movieData);
 	movieData.push(newMovie)
