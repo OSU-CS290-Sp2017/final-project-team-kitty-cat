@@ -6,7 +6,7 @@ var path = require('path');
 var fs = require('fs');
 var express = require('express');
 var exphbs = require('express-handlebars');
-var port = 3000|| process.env.port;
+var port =  process.env.port || 3000;
 var app = express();
 var movieData = require("./movieData");
 
