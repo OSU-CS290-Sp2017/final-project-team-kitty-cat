@@ -160,7 +160,7 @@ app.post('/movie/:index/minus'),function (req,res,next){
 	}
 	fs.writeFile('movieData.json', JSON.stringify(movieData), function (err) {
         if (err) {
-          res.status(500).send("Unable to increment plus minus.");
+          res.status(500).send("Unable to decrement plus minus.");
         } else {
           res.status(200).send();
         }
