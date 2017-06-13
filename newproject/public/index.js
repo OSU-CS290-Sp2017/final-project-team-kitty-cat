@@ -92,7 +92,7 @@ function checkTitles(){
 }
 
 function checkFields(){
-  if(director.value === '' || comment.value === '' || summary.value === '' || checkTitles() === true){
+  if(!director.value || !title.value || !comment.value  ){
     return false;
   }else{
     return true;
@@ -103,7 +103,9 @@ function addMovie(){
   console.log("Add Movie");
   if(checkFields() === true){
     storeMovieInFile(title.value,comment.value,summary.value,director.value,function(err){
-		alert("hello");
+		if (err){
+			alert(err);
+		}
 	});
     console.log("The Fields are correct ");
   }else{

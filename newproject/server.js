@@ -16,6 +16,10 @@ app.set('view engine', 'handlebars');
 console.log(movieData.length);
 
 
+app.get('/createMoviePage', function(req,res,next){
+	res.render("createMoviePage");
+});
+
 
 app.get('/',function(req,res,next){
 
@@ -165,7 +169,11 @@ app.post('/movie/:index/minus'),function (req,res,next){
 
 app.post('/addMovie', function (req, res, next) {
 	var array = movieData;
-	var newMovie = {title:req.body.title,comment:"trololo"};
+	var newMovie =
+	{	title:req.body.title,
+		comment:req.body.comment,
+		summary:req.body.summary,
+		director:req.body.director};
 	// console.log(JSON.stringify(newMovie));
 	newMovie.id=movieData.length;
 	newMovie.plusminus=0;
