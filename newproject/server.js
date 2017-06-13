@@ -17,16 +17,13 @@ console.log(movieData.length);
 
 app.get('/',function(req,res,next){
 
-	console.log(movieData);
 	var stocklist = movieData;
 	stocklist.sort(function(a,b){return b.plusminus - a.plusminus});
 	var sideMovies =  stocklist.slice(0,5);
-	movieData=require("./movieData");
 
 	var templateArgs ={
 		twit:sideMovies
 	};
-	movieData=require("./movieData");
 	var bool=true;
 	res.status(200).render("homePage",{list:templateArgs,bool:bool});
 });
@@ -40,7 +37,6 @@ app.get('/movie/:index',function(req,res,next){
 	var stocklist = movieData;
 	stocklist.sort(function(a,b){return b.plusminus - a.plusminus});
 	var sideMovies =  stocklist.slice(0,5);
-	movieData=require("./movieData");
 	for (i=0; i<movieData.length;i++){
 		if (movieData[i].id==index){
 			requestedMovie = movieData[i];
@@ -99,7 +95,6 @@ app.get('/random',function(req,res){
 	stockList.sort(function(a,b){return b.plusminus - a.plusminus});
 	var sideMovies =  stockList.slice(0,5);
 	var mylist = {requestedMovie};
-	movieData=require("./movieData");
 	//console.log(movieData[index].text);
 	for (i =0 ; i<movieData.length;i++){
 		if (movieData[i].id==index){
