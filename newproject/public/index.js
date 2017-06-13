@@ -92,7 +92,7 @@ function checkTitles(){
 }
 
 function checkFields(){
-  if(!director.value || !title.value || !comment.value  ){
+  if(!director.value || !title.value || !comment.value || !summary.value ){
     return false;
   }else{
     return true;
