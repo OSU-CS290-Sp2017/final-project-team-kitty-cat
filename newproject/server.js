@@ -5,6 +5,8 @@ var exphbs = require('express-handlebars');
 var port =  process.env.port || 3000;
 var app = express();
 var movieData = require("./movieData");
+var bodyParser = require('body-parser');
+app.use(bodyParser.json());
 
 var styleFile = fs.readFileSync('./public/style.css');
 var jsFile = fs.readFileSync('./public/index.js');
@@ -163,7 +165,7 @@ app.post('/movie/:index/minus'),function (req,res,next){
 
 app.post('/addMovie', function (req, res, next) {
 	var array = movieData;
-	var newMovie = {title:"asd",comment:"trololo"};
+	var newMovie = {title:req.body.title,comment:"trololo"};
 	// console.log(JSON.stringify(newMovie));
 	newMovie.id=movieData.length;
 	newMovie.plusminus=0;

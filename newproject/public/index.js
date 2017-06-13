@@ -3,6 +3,39 @@ var director = document.getElementById('director-input');
 var comment = document.getElementById('comment-input');
 var summary = document.getElementById('summary-input');
 
+// storePersonPhoto(function(err){
+// 		if (err){
+// 			alert(err);
+// 		}
+// });
+
+function storeMovieInFile(title, comment , summary,director,callback) {
+
+  var postURL = "/addMovie";
+
+  var postRequest = new XMLHttpRequest();
+  postRequest.open('POST', postURL);
+  postRequest.setRequestHeader('Content-Type', 'application/json');
+
+  postRequest.addEventListener('load', function (event) {
+    var error;
+    if (event.target.status !== 200) {
+      error = event.target.response;
+    }
+    callback(error);
+  });
+
+  var postBody = {
+    title: title,
+	comment : comment,
+	summary:summary,
+	director:director
+  };
+
+  postRequest.send(JSON.stringify(postBody));
+
+}
+
 function insertMovieData(){
   storeMovieData(function(err){
 
@@ -69,7 +102,9 @@ function checkFields(){
 function addMovie(){
   console.log("Add Movie");
   if(checkFields() === true){
-    insertMovieData();
+    storeMovieInFile(title.value,comment.value,summary.value,director.value,function(err){
+		alert("hello");
+	});
     console.log("The Fields are correct ");
   }else{
     console.log("The Fields arent finished");
