@@ -5,6 +5,16 @@ body {
   background-color: #FFF;
 }
 
+.titlePlus{
+	display: inline-flex;
+}
+
+.titlePlus button{
+	height: 20px;
+	margin-top: 20px;
+	margin-left: 30px;
+}
+
 html {
 	height: 100%;
 }

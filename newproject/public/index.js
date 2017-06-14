@@ -9,6 +9,48 @@ var summary = document.getElementById('summary-input');
 // 		}
 // });
 
+function onClickPlus(){
+	url =window.location.href;
+	url+="/plus";
+	increment(url,function(err){
+		if (err){
+			alert(err);
+		}
+	});
+	window.location.replace(" "+window.location.href);
+}
+
+function onClickMinus(){
+	url =window.location.href;
+	url+="/minus";
+	increment(url,function(err){
+		if (err){
+			alert(err);
+		}
+	});
+	window.location.replace(" "+window.location.href);
+}
+
+function increment(index,callback){
+  var xml = new XMLHttpRequest();
+  var url = index;
+
+  xml.open("POST", url);
+  xml.setRequestHeader("Content-Type", "text/plain");
+
+  xml.addEventListener('load', function(event){
+    var error;
+    if(event.target.status !== 200){
+      error = event.target.response;
+    }
+    callback(error);
+  });
+
+  var post = "qwe";
+
+  xml.send(post);
+}
+
 function storeMovieInFile(title, comment , summary,director,callback) {
 
   var postURL = "/addMovie";
@@ -134,6 +176,17 @@ window.addEventListener('DOMContentLoaded', function(event){
   if(createMovieButton){
     createMovieButton.addEventListener('click', addMovie);
   }
+
+  var plusButton = document.getElementById('plusButton');
+  if (plusButton){
+	plusButton.addEventListener('click',onClickPlus);
+
+  }
+  var minusButton = document.getElementById('minusButton');
+  if (minusButton){
+	  minusButton.addEventListener('click',onClickMinus);
+  }
+
 
   var searchButton = document.getElementById('navbar-search-button');
   var searchInput = document.getElementById('navbar-search-input');

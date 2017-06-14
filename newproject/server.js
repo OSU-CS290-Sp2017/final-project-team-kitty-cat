@@ -118,7 +118,7 @@ app.get('/random',function(req,res){
 			twit:sideMovies
 		};
 		var bool=false;
-		res.status(200).render('moviePage', {list:templateArgs,sidelist:templateArgsSide,bool:bool,random:true,});
+		res.status(200).render('moviePageRand', {list:templateArgs,sidelist:templateArgsSide,bool:bool,random:true,});
 	}  else {
 		res.status(404).render('404Page');
 	}
@@ -158,25 +158,26 @@ app.get('*', function (req, res) {
 
 });
 
-app.post('/movie/:index/plus'),function (req,res,next){
+app.post('/movie/:index/plus',function (req,res,next){
 	var id=req.params.index;
 	movieData = require('./movieData');
 	for (i=0;i<movieData.length;i++){
 		if(movieData[i].id == id){
-			movieData[i].plusminus++;
+			movieData[i].plusminus = movieData[i].plusminus + 1;
 		}
 	}
 	fs.writeFile('movieData.json', JSON.stringify(movieData), function (err) {
 		if (err) {
 			res.status(500).send("Unable to increment plus minus.");
 		} else {
+			console.log("toto");
 			res.status(200).send();
 		}
 
 	});
-}
+});
 
-app.post('/movie/:index/minus'),function (req,res,next){
+app.post('/movie/:index/minus',function (req,res,next){
 	var id=req.params.index;
 	movieData = require('./movieData');
 	for (i=0;i<movieData.length;i++){
@@ -192,7 +193,7 @@ app.post('/movie/:index/minus'),function (req,res,next){
 		}
 
 	});
-}
+});
 
 
 
