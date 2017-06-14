@@ -105,6 +105,9 @@ function addMovie(){
     storeMovieInFile(title.value,comment.value,summary.value,director.value,function(err){
 		if (err){
 			alert(err);
+		}else{
+			alert("your movie has been added");
+			window.location.replace(" http://localhost:3000/");
 		}
 	});
     console.log("The Fields are correct ");
