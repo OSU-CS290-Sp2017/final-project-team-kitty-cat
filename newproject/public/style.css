@@ -27,7 +27,7 @@ a {
 	color: MidnightBlue;
 }
 .movie-container a:hover{
-	color:RebeccaPurple;
+	color:#DC4405;
 }
 
 
@@ -94,7 +94,7 @@ a {
 
 a:hover,
 a:focus {
-  color: #FFF;
+  color: #DC4405;
 }
 
 a:focus {
