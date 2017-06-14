@@ -17,7 +17,7 @@ console.log(movieData.length);
 
 
 app.get('/createMoviePage', function(req,res,next){
-	res.render("createMoviePage");
+	res.render("createMoviePage",{add:true});
 });
 
 
@@ -31,7 +31,7 @@ app.get('/',function(req,res,next){
 		twit:sideMovies
 	};
 	var bool=true;
-	res.status(200).render("homePage",{list:templateArgs,bool:bool});
+	res.status(200).render("homePage",{list:templateArgs,bool:bool,home:true});
 });
 
 app.get('/movie/:index',function(req,res,next){
@@ -109,6 +109,7 @@ app.get('/random',function(req,res){
 		}
 	}
 
+
 	if (mylist) {
 		var templateArgs = {
 			twit:mylist
@@ -117,7 +118,7 @@ app.get('/random',function(req,res){
 			twit:sideMovies
 		};
 		var bool=false;
-		res.status(200).render('moviePage', {list:templateArgs,sidelist:templateArgsSide,bool:bool,});
+		res.status(200).render('moviePage', {list:templateArgs,sidelist:templateArgsSide,bool:bool,random:true,});
 	}  else {
 		res.status(404).render('404Page');
 	}
@@ -125,8 +126,35 @@ app.get('/random',function(req,res){
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/search/:search',function(req,res,next){
+	movieData = require('./movieData');
+	var search = req.params.search;
+	var result = [];
+	for (i = 0;i<movieData.length;i++){
+		if (movieData[i].title.includes(search)){
+
+			result.push(movieData[i]);
+			console.log("found");
+			console.log(movieData[i]);
+		}
+	}
+	console.log('results are :');
+	console.log(result);
+	var templateArgs={
+		twit:result
+	};
+	console.log(templateArgs);
+	var stockList=movieData;
+	stockList.sort(function(a,b){return b.plusminus - a.plusminus});
+	var sideMovies =  stockList.slice(0,5);
+	var templateArgsSide = {
+		twit:sideMovies
+	};
+	res.status(200).render('searchResult', {results :templateArgs ,sidelist:templateArgsSide,home:true,})
+});
+
 app.get('*', function (req, res) {
-	res.status(404).render("404Page");
+	res.status(404).render("404Page",{home:true,});
 
 });
 
@@ -165,6 +193,9 @@ app.post('/movie/:index/minus'),function (req,res,next){
 
 	});
 }
+
+
+
 
 
 app.post('/addMovie', function (req, res, next) {

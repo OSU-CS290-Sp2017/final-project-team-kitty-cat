@@ -113,6 +113,8 @@ function addMovie(){
   }
 }
 
+
+
 function clearContent(){
   console.log("clear content");
 
@@ -127,6 +129,17 @@ window.addEventListener('DOMContentLoaded', function(event){
   var createMovieButton = document.getElementById('input-create');
   if(createMovieButton){
     createMovieButton.addEventListener('click', addMovie);
+  }
+
+  var searchButton = document.getElementById('navbar-search-button');
+  var searchInput = document.getElementById('navbar-search-input');
+
+  if(searchButton){
+	  searchButton.addEventListener('click',function(){
+		  if (searchInput.value){
+			  window.location.replace(" http://localhost:3000/search/"+searchInput.value);
+		  }
+	  });
   }
 
   var clearContentButton = document.getElementById('input-clear');

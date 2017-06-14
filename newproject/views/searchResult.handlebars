@@ -1,0 +1,22 @@
+{{!
+Write a handlebars template in this file to implement the main tweeter page,
+as described in README.md.
+}}
+
+
+  		{{> header}}
+  		<main class="movie-container">
+			<div class="side-panel">
+				{{#each sidelist.twit}}
+					{{>movie}}
+				{{/each}}
+			</div>
+
+			<div class="main-container">
+				{{#each results.twit}}
+					{{>movie}}
+				{{/each}}
+
+			</div>
+
+  		</main>
