@@ -195,6 +195,8 @@ window.addEventListener('DOMContentLoaded', function(event){
 	  searchButton.addEventListener('click',function(){
 		  if (searchInput.value){
 			  window.location.replace(" http://localhost:3000/search/"+searchInput.value);
+		  }else{
+			  window.location.replace(" http://localhost:3000/search/");
 		  }
 	  });
   }

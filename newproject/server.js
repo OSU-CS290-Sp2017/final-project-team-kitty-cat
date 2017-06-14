@@ -126,6 +126,27 @@ app.get('/random',function(req,res){
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/search/',function(req,res,next){
+	movieData = require('./movieData');
+
+	var result = [];
+	for (i = 0;i<movieData.length;i++){
+			result.push(movieData[i]);
+	}
+	var templateArgs={
+		twit:result
+	};
+	console.log(templateArgs);
+	var stockList=movieData;
+	stockList.sort(function(a,b){return b.plusminus - a.plusminus});
+	var sideMovies =  stockList.slice(0,5);
+	var templateArgsSide = {
+		twit:sideMovies
+	};
+	res.status(200).render('searchResult', {results :templateArgs ,sidelist:templateArgsSide,home:true,})
+});
+
+
 app.get('/search/:search',function(req,res,next){
 	movieData = require('./movieData');
 	var search = req.params.search;
