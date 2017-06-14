@@ -107,7 +107,8 @@ function addMovie(){
 			alert(err);
 		}else{
 			alert("your movie has been added");
-			window.location.replace(" http://localhost:3000/");
+			window.location.replace(" http://localhost:3000/search/"+title.value);
+
 		}
 	});
     console.log("The Fields are correct ");
