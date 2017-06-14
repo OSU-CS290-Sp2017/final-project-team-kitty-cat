@@ -31,6 +31,8 @@ a {
 }
 
 
+
+
 .title{
   font-family: Bookman, Georgia, sans-serif;
 	background-color: #DC4405;
@@ -87,7 +89,7 @@ a {
 }
 
 .navlink.active {
-  box-shadow: inset 0 -3px #FFF;
+  box-shadow: inset 0 -3px #DC4405;
 }
 
 a:hover,

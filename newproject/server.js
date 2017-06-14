@@ -61,7 +61,7 @@ app.get('/movie/:index',function(req,res,next){
 		};
 		console.log(templateArgsSide);
 		var bool=false;
-		res.status(200).render('moviePage', {list:templateArgs,sidelist:templateArgsSide,bool:bool,});
+		res.status(200).render('moviePage', {list:templateArgs,sidelist:templateArgsSide,bool:bool,home:true,});
 	}  else {
 		res.status(404).render('404Page');
 	}
