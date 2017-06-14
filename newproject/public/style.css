@@ -202,8 +202,8 @@ a:focus {
   flex-direction: column;
   background-color: Orange;
   border-radius: 12px;
-  width: 50%;
-  height: 45%;
+  /*width: 50%;
+  height: 45%;*/
   margin-left: 25%;
 }
 
