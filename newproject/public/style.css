@@ -26,8 +26,8 @@ a {
 .main-container{
   background-color: #FDFFFC;
 	border: solid;
-	border-radius: 10px;
-	border-color: AntiqueWhite;
+	border-radius: 5px;
+	border-color: #9F9AA4;
 	width: 70%;
 	margin-left: 10px;
 }
@@ -36,15 +36,14 @@ a {
 	font-size: 20px;
 	color: MidnightBlue;
 }
+
 .movie-container a:hover{
 	color:#DC4405;
 }
 
-
-
-
 .title{
-  font-family: Bookman, Georgia, sans-serif;
+  padding: 10px 0px;
+  font-family: Inconsolata, Helvetica, Georgia, sans-serif;
 	background-color: #DC4405;
   color: #000;
 	margin:0;
@@ -77,21 +76,19 @@ a {
   background-color: #000000;
   list-style-type: none;
   margin: 0;
-  padding: 0;
   overflow: hidden;
 }
 
 .navitem {
-  float: left;
   display: inline-block;
-  color: #FDFFFC;
+  float: left;
+  color: #E3E5E2;
 }
 
 .navitem a {
-  display: inline-block;
   color: #FDFFFC;
   text-align: center;
-  padding: 14px 16px;
+  padding: 50px 16px;
 }
 
 .navitem a:hover {
@@ -113,17 +110,13 @@ a:focus {
 
 .navbar-search {
   float: right;
-  margin-right: 20px;
-  padding: 0;
-  line-height: 38px;
 }
 
 #navbar-search-input {
-  padding: 4px;
-  font-size: 16px;
+  font-size: 14px;
   background-color: #eee;
   border: 1px solid #dadada;
-  border-radius: 2px;
+  border-radius: 1px;
 }
 
 #navbar-search-input:focus {
@@ -132,20 +125,19 @@ a:focus {
 }
 
 #navbar-search-button {
-  margin-left: -5px;
-  font-size: 16px;
+  font-size: 14px;
   background: none;
   border: none;
-  color: #343434;
+  color: #FFF;
   cursor: pointer;
 }
 
 #navbar-search-button:hover {
-  color: #319df6;
+  color: #9F9AA4;
 }
 
 #navbar-search-button:focus {
-  color: #319df6;
+  color: #9F9AA4;
   outline: none;
 }
 
@@ -163,7 +155,7 @@ a:focus {
   margin: 2px;
   padding: 20px;
   border: 1px solid #dadada;
-  border-radius: 2px;
+  border-radius: 1px;
   background-color: #fff;
 }
 
@@ -265,4 +257,20 @@ a:focus {
 #input-cancel:hover {
   #input-cancel;
   background-color: Black;
+}
+
+#plusButton {
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: .5rem;
+  border-radius: 50%;
+}
+
+#minusButton {
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: .5rem;
+  border-radius: 50%;
 }
